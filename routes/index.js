@@ -15,5 +15,13 @@ router.get('/', function(req, res, next){
 //   res.sendFile('/Users/vinayams/Documents/Grace-Hopper/workshops/tweetApp/public/stylesheets/style.css');
 // })
 
+//single user page
+router.get('/users/:name', function(req, res, next){
+  var name = req.params.name;
+  var tweets = tweetBank.find({name: name});
+  res.render('index', {title: 'Tweet App', tweets: tweets, name: name});
+});
+
+
 module.exports = router;
 

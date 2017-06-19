@@ -6,6 +6,7 @@ const nunjucks = require('nunjucks');
 const routes = require('./routes');
 
 app.use('/', routes);
+
 /*
 For every incoming request:
 
